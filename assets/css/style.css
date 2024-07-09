@@ -458,13 +458,13 @@ main {
 
 .navbar {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  bottom: 0.7%;
+  left: 1%;
+  width: 98%;
   background: hsla(240, 1%, 17%, 0.75);
   backdrop-filter: blur(10px);
   border: 1px solid var(--jet);
-  border-radius: 12px 12px 0 0;
+  border-radius: 12px 12px 12px 12px;
   box-shadow: var(--shadow-2);
   z-index: 5;
 }
@@ -479,7 +479,8 @@ main {
 
 .navbar-link {
   color: var(--light-gray);
-  font-size: var(--fs-8);
+  font-size: small;
+  /* font-size: var(--fs-8); */
   padding: 20px 7px;
   transition: color var(--transition-1);
 }
@@ -613,6 +614,14 @@ main {
 /**
  * #testimonials-modal
  */
+
+ .open-or-close{
+  display: none;
+ }
+
+ .modal-container.active .open-or-close{
+  display:flex;
+ }
 
 .modal-container {
   position: fixed;
@@ -1359,9 +1368,11 @@ Certificate
 */
 
 .timeline-item img{
-  width: 70%;
-  padding: 25px;
+  display: block;
+  width: 100%;
+  padding-top: 20px;
 }
+
 
 /*-----------------------------------*\
   #RESPONSIVE
@@ -1378,8 +1389,7 @@ Certificate
    */
 
   .clients-item { min-width: calc(33.33% - 10px); }
-
-
+ 
 
   /**
    * #project, BLOG 
@@ -1578,10 +1588,11 @@ Certificate
   }
 
   /* testimonials modal */
-
-  .modal-container { padding: 20px; }
+  .modal-container { 
+    padding: 20px; }
 
   .testimonials-modal {
+    position: absolute;
     display: flex;
     justify-content: flex-start;
     align-items: stretch;
@@ -1634,6 +1645,12 @@ Certificate
     height: 8px;
     width: 8px;
     left: -43px;
+  }
+
+  .timeline-item img{
+    display: block;
+    width: 70%;
+    padding: 20px;
   }
 
   .skills-item:not(:last-child) { margin-bottom: 25px; }
