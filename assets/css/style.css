@@ -485,7 +485,7 @@ main {
 .navbar-link {
   color: var(--light-gray);
   font-size: small;
-  font-size: var(--fs-8);
+  font-size: var(--fs-6);
   padding: 20px 7px;
   transition: color var(--transition-1);
 }
@@ -753,7 +753,7 @@ main {
   gap: -10px;
   margin: 0;
   padding: 0;
-  /* padding-bottom: 5px; */
+  padding-bottom: 25px;
   overflow-x: auto;
   scroll-behavior: smooth;
   overscroll-behavior-inline: contain;
@@ -767,13 +767,13 @@ main {
 }
 
 .clients-item img {
-  width: 5em;
+  width: 7em;
   border-radius: 10px;
-  filter: grayscale(1);
+  /* filter: grayscale(1); */
   transition: var(--transition-1);
 }
 
-.clients-item img:hover {filter: none; transform: scale(1.1);  }
+.clients-item img:hover {filter: none; transform: scale(1.06);  }
 
 
 /*-----------------------------------*\
@@ -1937,7 +1937,7 @@ Certificate
 
   /* clients */
 
-  .clients-item { min-width: calc(25% - 38px); }
+  .clients-item { min-width: calc(15% - 38px); }
 
 
 
