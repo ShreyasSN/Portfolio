@@ -160,18 +160,23 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
 
 //Downloading resume
+// document.getElementById('downloadBtn').addEventListener('click', function() {
+//   const link = document.createElement('a');
+//   link.href = 'https://drive.google.com/file/d/1oWTywqV_UizXHgt08y_g7OSyVHZxp3Vu/view?usp=sharing'; // Replace with your file URL
+//   // link.download = 'Shreyas_S_N_Resume.pdf'; // Replace with the desired file name
+//   // document.body.appendChild(link);
+//   // link.click();
+//   // document.body.removeChild(link);
+// });
+
+// View resume on new tab
 document.getElementById('downloadBtn').addEventListener('click', function() {
-  const link = document.createElement('a');
-  link.href = 'https://drive.google.com/uc?export=download&id=1plqICufsz6SKjyYvQGgJ2pgfRK_xgH7Z'; // Replace with your file URL
-  link.download = 'Shreyas_S_N_Resume.pdf'; // Replace with the desired file name
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  const url = 'https://drive.google.com/file/d/1oWTywqV_UizXHgt08y_g7OSyVHZxp3Vu/view?usp=sharing'; // Replace with your file URL
+  window.open(url, '_blank'); // Opens the link in a new tab
 });
 
 
 //pop up window to display certificate
-
 function openModal(modalId, content) {
   var modal = document.getElementById(modalId);
   var modalContent = modal.querySelector('.modal-content-certificate p');
@@ -194,3 +199,6 @@ window.onclick = function(event) {
     }
   }
 }
+
+
+//swipping profiles
