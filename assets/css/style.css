@@ -281,7 +281,7 @@ article.active {
   padding-top: 45px;
   border-radius: 14px;
   box-shadow: var(--shadow-2);
-  cursor: pointer;
+  cursor: default;
   z-index: 1;
 }
 
@@ -485,7 +485,7 @@ main {
 .navbar-link {
   color: var(--light-gray);
   font-size: small;
-  /* font-size: var(--fs-8); */
+  font-size: var(--fs-8);
   padding: 20px 7px;
   transition: color var(--transition-1);
 }
@@ -744,35 +744,36 @@ main {
  * #clients 
  */
 
-.clients { margin-bottom: 15px; }
+.clients { margin-bottom: 5px; }
 
 .clients-list {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 15px;
-  margin: 0 -15px;
-  padding: 25px;
-  padding-bottom: 25px;
+  gap: -10px;
+  margin: 0;
+  padding: 0;
+  /* padding-bottom: 5px; */
   overflow-x: auto;
   scroll-behavior: smooth;
   overscroll-behavior-inline: contain;
   scroll-snap-type: inline mandatory;
-  scroll-padding-inline: 25px;
+  scroll-padding-inline: 5px;
 }
 
-.clients-item {
+.clients-item { 
   min-width: 50%;
   scroll-snap-align: start;
 }
 
 .clients-item img {
-  width: 70%;
-  /* filter: grayscale(1); */
+  width: 5em;
+  border-radius: 10px;
+  filter: grayscale(1);
   transition: var(--transition-1);
 }
 
-.clients-item img:hover { filter: grayscale(0); transform: scale(1.1);  }
+.clients-item img:hover {filter: none; transform: scale(1.1);  }
 
 
 /*-----------------------------------*\
@@ -1316,7 +1317,6 @@ margin-bottom: 20px;
 display: flex;
 align-items: center;
 padding: 5px 10px;
-opacity: 70%;
 color: white;
 transition: 0.3s;
 background-color: #1d4620;
