@@ -114,28 +114,6 @@ for (let i = 0; i < filterBtn.length; i++) {
 }
 
 
-
-// contact form variables
-const form = document.querySelector("[data-form]");
-const formInputs = document.querySelectorAll("[data-form-input]");
-const formBtn = document.querySelector("[data-form-btn]");
-
-// add event to all form input field
-for (let i = 0; i < formInputs.length; i++) {
-  formInputs[i].addEventListener("input", function () {
-
-    // check form validation
-    if (form.checkValidity()) {
-      formBtn.removeAttribute("disabled");
-    } else {
-      formBtn.setAttribute("disabled", "");
-    }
-
-  });
-}
-
-
-
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
@@ -201,4 +179,51 @@ window.onclick = function(event) {
 }
 
 
-//swipping profiles
+// Contact Form Send Message via email
+
+// contact form variables
+const form = document.querySelector("[data-form]");
+const formInputs = document.querySelectorAll("[data-form-input]");
+const formBtn = document.querySelector("[data-form-btn]");
+
+// add event to all form input field
+for (let i = 0; i < formInputs.length; i++) {
+  formInputs[i].addEventListener("input", function () {
+
+    // check form validation
+    if (form.checkValidity()) {
+      formBtn.removeAttribute("disabled");
+    } else {
+      formBtn.setAttribute("disabled", "");
+    }
+
+  });
+}
+
+  const btn = document.getElementById('button');
+  const formid = document.getElementById('form');
+
+  formid.addEventListener('submit', function(event) {
+    event.preventDefault();
+    btn.disabled = true;  // Disable button to prevent multiple clicks
+    btn.querySelector('span').textContent = 'Sending...'; // Change button text
+
+    const serviceID = 'default_service';
+    const templateID = 'template_1zocbd9';
+
+    // Send form data using EmailJS
+    emailjs.sendForm(serviceID, templateID, formid)
+      .then(() => {
+        btn.querySelector('span').textContent = 'Sent!';
+        formid.reset();
+        alert('Thank you for your message, I will reach out to you soon.');
+        setTimeout(() => {
+          btn.querySelector('span').textContent = 'Send Message';
+          btn.disabled = false;
+        }, 2000); // Reset button text after 2 seconds
+      }, (err) => {
+        btn.querySelector('span').textContent = 'Send Message';
+        btn.disabled = false;
+        alert(JSON.stringify(err)); // Handle errors
+      });
+  });
