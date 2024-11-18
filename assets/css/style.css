@@ -1326,7 +1326,7 @@ main {
     opacity: 0; 
     z-index: 0;
     filter: grayscale(1);
-    animation: imageAnimation 30s linear infinite 0s; /* Animation settings */
+    animation: imageAnimation 20s linear infinite 0s; /* Animation settings */
   }
   
   /* Rounded Corners for Individual Images */
@@ -1334,35 +1334,41 @@ main {
     border-radius: 16px;
   }
   
-  /* Add Background Images */
-  .slideshow li:nth-child(1) .slide { 
-    background-image: url("../images/slideshow/1.jpg"); 
-  }
-  .slideshow li:nth-child(2) .slide { 
-    background-image: url("../images/slideshow/1.png");
-    animation-delay: 6s; 
-  }
-  .slideshow li:nth-child(3) .slide { 
-    background-image: url("../images/slideshow/1.png");
-    animation-delay: 12s; 
-  }
-  .slideshow li:nth-child(4) .slide { 
-    background-image: url("../images/slideshow/1.png");   
-    animation-delay: 18s; 
-  }
-  .slideshow li:nth-child(5) .slide { 
-    background-image: url("../images/slideshow/1.png");
-    animation-delay: 24s; 
-  }
-  
-  /* Keyframe Animation for Fade-in and Fade-out */
-  @keyframes imageAnimation { 
-    0% { opacity: 0; animation-timing-function: ease-in; }
-    20% { opacity: 1; animation-timing-function: ease-out; }
-    40% { opacity: 1; }
-    60% { opacity: 0; }
-    100% { opacity: 0; }
-  }
+/* Add Background Images */
+.slideshow li:nth-child(1) .slide { 
+  background-image: url("../images/slideshow/BG-IMG-FIXED.jpg");
+  animation-delay: 0s; 
+}
+.slideshow li:nth-child(2) .slide { 
+  background-image: url("../images/slideshow/IMG_3751.jpg"); 
+  animation-delay: 5s; 
+}
+.slideshow li:nth-child(3) .slide { 
+  background-image: url("../images/slideshow/IMG_4016.jpg"); 
+  animation-delay: 10s; 
+}
+.slideshow li:nth-child(4) .slide { 
+  background-image: url("../images/slideshow/IMG_8471.jpg"); 
+  animation-delay: 15s; 
+}
+.slideshow li:nth-child(5) .slide { 
+  background-image: url("../images/slideshow/IMG_9518.jpg");
+  animation-delay: 20s; 
+}
+
+/* Keyframe Animation for Sequential Fade */
+@keyframes imageAnimation { 
+  0% { opacity: 0; }
+  10% { opacity: 1; } /* Fade in */
+  30% { opacity: 1; } /* Stay visible */
+  40% { opacity: 0; } /* Fade out */
+  100% { opacity: 0; } /* Hidden for the rest */
+}
+
+/* Global Animation Duration */
+.slideshow li .slide {
+  animation: imageAnimation 25s linear infinite;
+}
 
 .contact-form {
   margin-bottom: 10px;
