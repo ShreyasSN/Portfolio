@@ -813,6 +813,30 @@ main {
   line-height: 1.6;
 }
 
+/* Certificate Text */
+
+.certificate-link {
+  position: relative;
+  width: 80%;
+  /* background: var(--bittersweet-shimmer); */
+  color: skyblue;
+  font-weight: bold;
+  font-size: small;
+  padding: 5px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+  transition: color 0.25s;
+}
+
+.certificate-link:hover {
+  text-decoration-line: underline;
+  /* color: #1504ff; */
+  transition: 0.25s;
+}
+
 /**
  * #clients 
  */
@@ -1305,64 +1329,74 @@ main {
 }
 
 .slideshow {
-    position: relative; /* Change to relative for proper containment */
-    height: 380px; /* Fixed height */
-    width: 100%; /* Full width of the parent */
-    border-radius: 16px; /* Rounded corners */
-    margin-bottom: 30px; /* Space below the slideshow */
-    border: 1px solid var(--jet); /* Optional border styling */
-    overflow: hidden; /* Ensure children stay inside bounds */
-  }
-  
-  .slideshow li .slide {
-    position: absolute; /* Keep slides positioned absolutely */
-    width: 100%; /* Fit to container width */
-    height: 100%; 
-    top: 0;
-    left: 0;
-    background-size: cover; /* Ensure the image covers the slide */
-    background-position: 50% 50%; /* Center the background image */
-    background-repeat: no-repeat; /* Avoid repetition */
-    opacity: 0; 
-    z-index: 0;
-    filter: grayscale(1);
-    animation: imageAnimation 20s linear infinite 0s; /* Animation settings */
-  }
-  
-  /* Rounded Corners for Individual Images */
-  .slideshow li .slide {
-    border-radius: 16px;
-  }
-  
+  position: relative; /* Change to relative for proper containment */
+  height: 380px; /* Fixed height */
+  width: 100%; /* Full width of the parent */
+  border-radius: 16px; /* Rounded corners */
+  margin-bottom: 30px; /* Space below the slideshow */
+  border: 1px solid var(--jet); /* Optional border styling */
+  overflow: hidden; /* Ensure children stay inside bounds */
+}
+
+.slideshow li .slide {
+  position: absolute; /* Keep slides positioned absolutely */
+  width: 100%; /* Fit to container width */
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-size: cover; /* Ensure the image covers the slide */
+  background-position: 50% 50%; /* Center the background image */
+  background-repeat: no-repeat; /* Avoid repetition */
+  opacity: 0;
+  z-index: 0;
+  filter: grayscale(1);
+  animation: imageAnimation 25s linear infinite 0s; /* Animation settings */
+}
+
+/* Rounded Corners for Individual Images */
+.slideshow li .slide {
+  border-radius: 16px;
+}
+
 /* Add Background Images */
-.slideshow li:nth-child(1) .slide { 
+.slideshow li:nth-child(1) .slide {
   background-image: url("../images/slideshow/BG-IMG-FIXED.jpg");
-  animation-delay: 0s; 
+  animation-delay: 0s;
 }
-.slideshow li:nth-child(2) .slide { 
-  background-image: url("../images/slideshow/IMG_3751.jpg"); 
-  animation-delay: 5s; 
+.slideshow li:nth-child(2) .slide {
+  background-image: url("../images/slideshow/IMG_3751.jpg");
+  animation-delay: 5s;
 }
-.slideshow li:nth-child(3) .slide { 
-  background-image: url("../images/slideshow/IMG_4016.jpg"); 
-  animation-delay: 10s; 
+.slideshow li:nth-child(3) .slide {
+  background-image: url("../images/slideshow/IMG_4016.jpg");
+  animation-delay: 10s;
 }
-.slideshow li:nth-child(4) .slide { 
-  background-image: url("../images/slideshow/IMG_8471.jpg"); 
-  animation-delay: 15s; 
+.slideshow li:nth-child(4) .slide {
+  background-image: url("../images/slideshow/IMG_8471.jpg");
+  animation-delay: 15s;
 }
-.slideshow li:nth-child(5) .slide { 
+.slideshow li:nth-child(5) .slide {
   background-image: url("../images/slideshow/IMG_9518.jpg");
-  animation-delay: 20s; 
+  animation-delay: 20s;
 }
 
 /* Keyframe Animation for Sequential Fade */
-@keyframes imageAnimation { 
-  0% { opacity: 0; }
-  10% { opacity: 1; } /* Fade in */
-  30% { opacity: 1; } /* Stay visible */
-  40% { opacity: 0; } /* Fade out */
-  100% { opacity: 0; } /* Hidden for the rest */
+@keyframes imageAnimation {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  } /* Fade in */
+  30% {
+    opacity: 1;
+  } /* Stay visible */
+  40% {
+    opacity: 0;
+  } /* Fade out */
+  100% {
+    opacity: 0;
+  } /* Hidden for the rest */
 }
 
 /* Global Animation Duration */
@@ -1611,9 +1645,6 @@ Certificate
   padding-top: 20px;
 }
 
-
-
-
 /*-----------------------------------*\
   #RESPONSIVE
 \*-----------------------------------*/
@@ -1626,7 +1657,9 @@ Certificate
   /**
    * client
    */
-
+   .certificate-link {
+    width: 45%;
+  }
   .clients-item {
     min-width: calc(33.33% - 10px);
   }
@@ -1641,6 +1674,7 @@ Certificate
   }
 }
 
+
 /**
  * responsive larger than 580px screen
  */
@@ -1649,6 +1683,10 @@ Certificate
   /**
    * CUSTOM PROPERTY
    */
+   .certificate-link{
+    width: 45%;
+  }
+
 
   :root {
     /**
@@ -1981,6 +2019,7 @@ Certificate
   /**
    * REUSED STYLE
    */
+
 
   .sidebar,
   article {
