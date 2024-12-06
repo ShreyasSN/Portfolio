@@ -216,7 +216,7 @@ for (let i = 0; i < formInputs.length; i++) {
       .then(() => {
         btn.querySelector('span').textContent = 'Sent!';
         formid.reset();
-        alert('Thank you for your message, I will reach out to you soon.');
+        alert('Thank you for your message');
         setTimeout(() => {
           btn.querySelector('span').textContent = 'Send Message';
           btn.disabled = false;
