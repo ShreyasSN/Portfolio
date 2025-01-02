@@ -1349,7 +1349,7 @@ main {
   background-repeat: no-repeat; /* Avoid repetition */
   opacity: 0;
   z-index: 0;
-  filter: grayscale(1);
+  filter: grayscale(0);
   animation: imageAnimation 25s linear infinite 0s; /* Animation settings */
 }
 
@@ -1376,7 +1376,7 @@ main {
   animation-delay: 15s;
 }
 .slideshow li:nth-child(5) .slide {
-  background-image: url("../images/slideshow/IMG_9518.jpg");
+  background-image: url("../images/slideshow/JNV_Kannur_Office.png");
   animation-delay: 20s;
 }
 

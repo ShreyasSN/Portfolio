@@ -77,11 +77,8 @@ for (let i = 0; i < selectItems.length; i++) {
 
 // filter variables
 const filterItems = document.querySelectorAll("[data-filter-item]");
-
 const filterFunc = function (selectedValue) {
-
   for (let i = 0; i < filterItems.length; i++) {
-
     if (selectedValue === "all") {
       filterItems[i].classList.add("active");
     } else if (selectedValue === filterItems[i].dataset.category) {
@@ -89,9 +86,7 @@ const filterFunc = function (selectedValue) {
     } else {
       filterItems[i].classList.remove("active");
     }
-
   }
-
 }
 
 // add event in all filter button items for large screen
@@ -112,7 +107,6 @@ for (let i = 0; i < filterBtn.length; i++) {
   });
 
 }
-
 
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
@@ -136,23 +130,17 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 
-
-//Downloading resume
-// document.getElementById('downloadBtn').addEventListener('click', function() {
-//   const link = document.createElement('a');
-//   link.href = 'https://drive.google.com/file/d/1oWTywqV_UizXHgt08y_g7OSyVHZxp3Vu/view?usp=sharing'; // Replace with your file URL
-//   // link.download = 'Shreyas_S_N_Resume.pdf'; // Replace with the desired file name
-//   // document.body.appendChild(link);
-//   // link.click();
-//   // document.body.removeChild(link);
-// });
-
 // View resume on new tab
 document.getElementById('downloadBtn').addEventListener('click', function() {
-  const url = 'https://drive.google.com/file/d/1oWTywqV_UizXHgt08y_g7OSyVHZxp3Vu/view?usp=sharing'; // Replace with your file URL
+  const url = 'https://drive.google.com/file/d/1tD7SrD-maGWJG4ChSul2Pffc_YqUa0rp/view?usp=sharing'; // Replace with your file URL
   window.open(url, '_blank'); // Opens the link in a new tab
+  const link = document.createElement('a');
+  link.href = 'https://drive.google.com/uc?export=download&id=1tD7SrD-maGWJG4ChSul2Pffc_YqUa0rp'; // Replace with your file URL
+  link.download = 'Shreyas_S_N_Resume.pdf'; // Replace with the desired file name
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 });
-
 
 //pop up window to display certificate
 function openModal(modalId, content) {
