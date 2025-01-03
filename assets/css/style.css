@@ -1225,6 +1225,19 @@ main {
   gap: 20px;
 }
 
+.blog .title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.blog .title-wrapper data {
+  color: var(--light-gray);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-300);
+}
+
 .blog-post-item > a {
   position: relative;
   background: var(--border-gradient-onyx);
@@ -1360,7 +1373,7 @@ main {
 
 /* Add Background Images */
 .slideshow li:nth-child(1) .slide {
-  background-image: url("../images/slideshow/BG-IMG-FIXED.jpg");
+  background-image: url("../images/slideshow/green.jpg");
   animation-delay: 0s;
 }
 .slideshow li:nth-child(2) .slide {
@@ -1549,9 +1562,9 @@ textarea.form-input::-webkit-resizer {
   display: flex;
   align-items: center;
   padding: 5px 10px;
-  color: white;
+  color: aliceblue;
   transition: 0.3s;
-  background-color: #1d4620;
+  background-color: #224925;
   border-radius: 5px;
   font-size: 14px;
   white-space: nowrap;
@@ -1559,7 +1572,7 @@ textarea.form-input::-webkit-resizer {
 
 .skillset:hover {
   opacity: 100%;
-  background-color: #26732d;
+  background-color: #1e7125;
 }
 
 .skillset img {

@@ -130,12 +130,27 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 
-// View resume on new tab
-document.getElementById('downloadBtn').addEventListener('click', function() {
-  const url = 'https://drive.google.com/file/d/1tD7SrD-maGWJG4ChSul2Pffc_YqUa0rp/view?usp=sharing'; // Replace with your file URL
+const viewURL = 'https://drive.google.com/file/d/1tD7SrD-maGWJG4ChSul2Pffc_YqUa0rp/view?usp=sharing';
+const downloadURL = 'https://drive.google.com/uc?export=download&id=1tD7SrD-maGWJG4ChSul2Pffc_YqUa0rp';
+
+// View resume on new tab aside
+document.getElementById('asideDownloadResume').addEventListener('click', function() {
+  const url = viewURL; // Replace with your file URL
   window.open(url, '_blank'); // Opens the link in a new tab
   const link = document.createElement('a');
-  link.href = 'https://drive.google.com/uc?export=download&id=1tD7SrD-maGWJG4ChSul2Pffc_YqUa0rp'; // Replace with your file URL
+  link.href = downloadURL; // Replace with your file URL
+  link.download = 'Shreyas_S_N_Resume.pdf'; // Replace with the desired file name
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+});
+
+// View resume on new tab
+document.getElementById('downloadBtn').addEventListener('click', function() {
+  const url = viewURL; // Replace with your file URL
+  window.open(url, '_blank'); // Opens the link in a new tab
+  const link = document.createElement('a');
+  link.href = downloadURL; // Replace with your file URL
   link.download = 'Shreyas_S_N_Resume.pdf'; // Replace with the desired file name
   document.body.appendChild(link);
   link.click();
